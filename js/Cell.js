@@ -2,7 +2,6 @@ class Cell {
 	constructor() {}
 
 	createCell(number, level) {
-		console.log(level)
 		const cell = document.createElement('div')
 		const cellChild = document.createElement('div')
 		const p = document.createElement('p')
@@ -45,9 +44,6 @@ class Cell {
 		]
 
 		for (let i = 0; i < faces.length; i++) {
-			let isX = emptyPosition.x - position.x
-			let isY = emptyPosition.y - position.y
-			console.log({ isX, isY })
 			if (faces[i].x && faces[i].y) return true
 		}
 		return false

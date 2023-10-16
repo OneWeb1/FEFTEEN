@@ -67,7 +67,6 @@ class Game {
 		const uiWrapper = document.querySelector('.ui-wrapper')
 		const wrapper = document.querySelector('.wrapper')
 		const icon = document.querySelector('.icon')
-		console.log(icon)
 		icon.onclick = () => {
 			uiWrapper.style.display = 'block'
 			wrapper.style.display = 'none'
