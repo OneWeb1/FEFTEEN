@@ -140,6 +140,13 @@ body {
 	padding: 0px 20px;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	font-weight: 600;
+}
+
+.left-wrapper {
+	display: flex;
+	align-items: center;
 }
 
 .icon {
@@ -151,7 +158,8 @@ body {
   justify-content: center;
   transition:.2s;
 	margin-right: 10px;
-  
+	display: flex;
+	
 }
 
 .icon:hover {
@@ -164,4 +172,10 @@ body {
 
 .header-text {
 	font-size: 25px;
+}
+
+
+.author-name {
+	font-size: 40px;
+	font-weight: 900;
 }

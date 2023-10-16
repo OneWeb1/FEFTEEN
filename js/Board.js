@@ -30,7 +30,7 @@ class Board {
 	renderCells(cells) {
 		const box = this.getCellStaticPosition()
 		this.root.innerHTML = ''
-		cells.forEach(item => {
+		cells?.forEach(item => {
 			const x = item.position.x * box.width + box.x
 			const y = item.position.y * box.height + box.y
 			item.cell.onclick = e => this.clickHandler(item)
@@ -39,6 +39,30 @@ class Board {
 			this.cells.cell.translate(item.cell, x, y)
 			this.root.appendChild(item.cell)
 		})
+	}
+
+	pressMove(id) {
+		const item = this.getNeighBoars()[id]
+		if (!item) return
+		this.clickHandler(item)
+	}
+
+	pressHandler(e) {
+		if (e.key === 'ArrowLeft') {
+			this.pressMove(2)
+		}
+
+		if (e.key === 'ArrowUp') {
+			this.pressMove(3)
+		}
+
+		if (e.key === 'ArrowRight') {
+			this.pressMove(0)
+		}
+
+		if (e.key === 'ArrowDown') {
+			this.pressMove(1)
+		}
 	}
 
 	clickHandler(item) {
@@ -104,6 +128,25 @@ class Board {
 		}
 
 		return true
+	}
+
+	getCell(x, y) {
+		for (let i = 0; i < this.staticCells.length; i++) {
+			const cell = this.staticCells[i]
+			if (cell.position.x === x && cell.position.y === y) return cell
+		}
+
+		return null
+	}
+
+	getNeighBoars(x, y) {
+		const ecp = this.getEmptyCell().position
+		return [
+			this.getCell(ecp.x - 1, ecp.y),
+			this.getCell(ecp.x, ecp.y - 1),
+			this.getCell(ecp.x + 1, ecp.y),
+			this.getCell(ecp.x, ecp.y + 1),
+		]
 	}
 
 	getEmptyCell() {

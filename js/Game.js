@@ -20,6 +20,7 @@ class Game {
 		this.selectModeHandler()
 		this.startHandler()
 		this.back()
+		this.keypressHandler()
 	}
 
 	selectModeHandler() {
@@ -40,6 +41,12 @@ class Game {
 				this.board.level = this.level
 			}
 		})
+	}
+
+	keypressHandler() {
+		document.onkeyup = e => {
+			this.board.pressHandler(e)
+		}
 	}
 
 	startHandler() {
