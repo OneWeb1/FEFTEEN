@@ -74,7 +74,8 @@ body {
 }
 
 .mode-active {
-	filter: hue-rotate(357deg);
+	background: #181818;
+	color:#fff;
 	box-shadow: inset 5px 0px 5px #c0854a, inset -5px 0px 5px #c0854a;
 }
 
@@ -168,6 +169,7 @@ body {
 .icon img {
 	width: 30px;
 	height: 30px;
+	filter: invert(100);
 }
 
 .header-text {
